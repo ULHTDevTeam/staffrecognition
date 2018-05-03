@@ -1,0 +1,29 @@
+﻿<%@ Register Assembly="DevExpress.Web.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+<dx:ASPxTextBox runat="server" SkinID="TextBoxSmall" Width="50px" CaptionCellStyle-Width="300px" CaptionCellStyle-BackColor="White" CaptionStyle-Font-Bold="true" CaptionStyle-Font-Size="10pt" 
+CssClass="mysmallfield" />
+<dx:ASPxTextBox runat="server" SkinID="TextBoxNormal" Width="200px" CaptionCellStyle-Width="300px" CaptionCellStyle-BackColor="White" CaptionStyle-Font-Bold="true" CaptionStyle-Font-Size="10pt" 
+CssClass="myfield" />
+<dx:ASPxMemo runat="server" SkinID="MemoNormal" Height="71" Width="200px" CaptionCellStyle-Width="300px" CaptionCellStyle-BackColor="White" CaptionStyle-Font-Bold="true" CaptionStyle-Font-Size="10pt" CssClass="mymemofield" />
+<dx:ASPxDateEdit runat="server" SkinID="DateEditNormal" Width="200px" CaptionCellStyle-Width="300px" CaptionCellStyle-BackColor="White" CaptionStyle-Font-Bold="true" CaptionStyle-Font-Size="10pt"
+CssClass="myfield" />
+<dx:ASPxButton runat="server" SkinID="ButtonNormal" Width="150px" CssClass="buttonarea" height="25" />
+<dx:ASPxComboBox runat="server" SkinID="ComboBoxNormal" Width="200px" CaptionCellStyle-Width="300px" CaptionCellStyle-BackColor="White" CaptionStyle-Font-Bold="true" CaptionStyle-Font-Size="10pt" CssClass="myfield" />
+<dx:ASPxCheckBox runat="server" SkinID="CheckBoxNormal" Width="300px" Height="35px" CssClass="mycheckboxfield" />
+<dx:ASPxLabel runat="server" SkinID="LabelNormal" Width="200px" CssClass="mylabel" />
+<dx:ASPxLabel runat="server" SkinID="LabelNormalHeader" Width="300px" CssClass="mylabel" Font-Bold="true" Font-Size="10pt" />

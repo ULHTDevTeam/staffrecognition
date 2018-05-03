@@ -1,0 +1,68 @@
+﻿body {
+    font-family: Arial;
+    font-size: 10pt; /*12pt*/
+}
+
+.mylabel
+{
+    font-family: Arial;
+    font-size: 10pt;
+    width: 300px;
+    display: block;
+    float: left;
+    color: black;
+    clear: none;
+}
+
+.myfield, .mysmallfield, .mymemofield, .mycheckboxfield
+{
+    font-family: Arial;
+    font-size: 10pt;
+    display: block;
+    float: left;
+    color: black;
+}
+
+.myfield
+{
+    width: 200px;
+    display: inline-table;
+}
+
+.mycheckboxfield
+{
+    font-weight: bold;
+}
+
+.mysmallfield
+{
+    width: 75px;
+}
+
+.mymemofield
+{
+    display: inline-table;  /* fix to scrollbar position issue on memo field */
+}
+
+.myvalidator
+{
+    color: red;
+    font-family: Arial;
+    font-size: 10pt;
+    font-weight: normal;
+}
+
+.buttonarea
+{
+    background: #0164A8;
+    color: #FFFFFF;
+    border: 2px solid black;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dxeDisabled_Glass
+{
+    background-color: gray;
+}
