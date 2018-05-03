@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="StaffRecognition_ReviewModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Certificate_Logging">
+          <Key>
+            <PropertyRef Name="Identifier" />
+          </Key>
+          <Property Name="Identifier" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RecipientName" Type="varchar" MaxLength="100" />
+          <Property Name="RecipientEmailAddress" Type="varchar" MaxLength="100" />
+          <Property Name="RecipientManagerEmailAddress" Type="varchar" MaxLength="100" />
+          <Property Name="SenderName" Type="varchar" MaxLength="100" />
+          <Property Name="SenderEmailAddress" Type="varchar" MaxLength="100" />
+          <Property Name="CertificateMessage" Type="varchar" MaxLength="500" />
+          <Property Name="CertificateDate" Type="date" />
+          <Property Name="CertificateType" Type="varchar" MaxLength="50" />
+          <Property Name="EmailSubject" Type="varchar" MaxLength="100" />
+          <Property Name="EmailBody" Type="text" />
+          <Property Name="EmailSent" Type="bit" />
+          <Property Name="ExecutiveTeamConsideration" Type="bit" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="LoggedOnUser" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Function Name="InsertCertificateLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RecipientName" Type="varchar" Mode="In" />
+          <Parameter Name="RecipientEmailAddress" Type="varchar" Mode="In" />
+          <Parameter Name="RecipientManagerEmailAddress" Type="varchar" Mode="In" />
+          <Parameter Name="SenderName" Type="varchar" Mode="In" />
+          <Parameter Name="SenderEmailAddress" Type="varchar" Mode="In" />
+          <Parameter Name="CertificateMessage" Type="varchar" Mode="In" />
+          <Parameter Name="CertificateDate" Type="date" Mode="In" />
+          <Parameter Name="CertificateType" Type="varchar" Mode="In" />
+          <Parameter Name="EmailSubject" Type="varchar" Mode="In" />
+          <Parameter Name="EmailBody" Type="text" Mode="In" />
+          <Parameter Name="EmailSent" Type="bit" Mode="In" />
+          <Parameter Name="ExecutiveTeamConsideration" Type="bit" Mode="In" />
+          <Parameter Name="LoggedOnUser" Type="varchar" Mode="In" />
+          <Parameter Name="result" Type="varchar" Mode="InOut" />
+          <Parameter Name="new_identity" Type="int" Mode="InOut" />
+        </Function>
+        <EntityContainer Name="StaffRecognition_ReviewModelStoreContainer">
+          <EntitySet Name="Certificate_Logging" EntityType="Self.Certificate_Logging" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="StaffRecognition_ReviewModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Certificate_Logging">
+          <Key>
+            <PropertyRef Name="Identifier" />
+          </Key>
+          <Property Name="Identifier" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RecipientName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RecipientEmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RecipientManagerEmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SenderName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SenderEmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CertificateMessage" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CertificateDate" Type="DateTime" Precision="0" />
+          <Property Name="CertificateType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmailSubject" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EmailBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EmailSent" Type="Boolean" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="LoggedOnUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ExecutiveTeamConsideration" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="StaffRecognition_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Certificate_Logging" EntityType="Self.Certificate_Logging" />
+          <FunctionImport Name="InsertCertificateLog" ReturnType="Collection(Int32)">
+            <Parameter Name="RecipientName" Mode="In" Type="String" />
+            <Parameter Name="RecipientEmailAddress" Mode="In" Type="String" />
+            <Parameter Name="RecipientManagerEmailAddress" Mode="In" Type="String" />
+            <Parameter Name="SenderName" Mode="In" Type="String" />
+            <Parameter Name="SenderEmailAddress" Mode="In" Type="String" />
+            <Parameter Name="CertificateMessage" Mode="In" Type="String" />
+            <Parameter Name="CertificateDate" Mode="In" Type="DateTime" />
+            <Parameter Name="CertificateType" Mode="In" Type="String" />
+            <Parameter Name="EmailSubject" Mode="In" Type="String" />
+            <Parameter Name="EmailBody" Mode="In" Type="String" />
+            <Parameter Name="EmailSent" Mode="In" Type="Boolean" />
+            <Parameter Name="ExecutiveTeamConsideration" Mode="In" Type="Boolean" />
+            <Parameter Name="LoggedOnUser" Mode="In" Type="String" />
+            <Parameter Name="result" Mode="InOut" Type="String" />
+            <Parameter Name="new_identity" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="InsertCertificateLog_Result">
+          <Property Type="Int32" Name="Column1" Nullable="true" />
+          <Property Type="String" Name="Column2" Nullable="true" MaxLength="10" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="StaffRecognition_ReviewModelStoreContainer" CdmEntityContainer="StaffRecognition_Entities">
+          <EntitySetMapping Name="Certificate_Logging">
+            <EntityTypeMapping TypeName="StaffRecognition_ReviewModel.Certificate_Logging">
+              <MappingFragment StoreEntitySet="Certificate_Logging">
+                <ScalarProperty Name="ExecutiveTeamConsideration" ColumnName="ExecutiveTeamConsideration" />
+                <ScalarProperty Name="Identifier" ColumnName="Identifier" />
+                <ScalarProperty Name="RecipientName" ColumnName="RecipientName" />
+                <ScalarProperty Name="RecipientEmailAddress" ColumnName="RecipientEmailAddress" />
+                <ScalarProperty Name="RecipientManagerEmailAddress" ColumnName="RecipientManagerEmailAddress" />
+                <ScalarProperty Name="SenderName" ColumnName="SenderName" />
+                <ScalarProperty Name="SenderEmailAddress" ColumnName="SenderEmailAddress" />
+                <ScalarProperty Name="CertificateMessage" ColumnName="CertificateMessage" />
+                <ScalarProperty Name="CertificateDate" ColumnName="CertificateDate" />
+                <ScalarProperty Name="CertificateType" ColumnName="CertificateType" />
+                <ScalarProperty Name="EmailSubject" ColumnName="EmailSubject" />
+                <ScalarProperty Name="EmailBody" ColumnName="EmailBody" />
+                <ScalarProperty Name="EmailSent" ColumnName="EmailSent" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="LoggedOnUser" ColumnName="LoggedOnUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="InsertCertificateLog" FunctionName="StaffRecognition_ReviewModel.Store.InsertCertificateLog" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
